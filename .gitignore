@@ -1,0 +1,5 @@
+.idea
+/*.html
+*xml
+*.txt
+node_modules/
