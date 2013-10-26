@@ -1,0 +1,32 @@
+{
+  "name": "warmap",
+  "version": "0.0.1",
+  "description": "Create simple maps from Kismet gpsxml files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "warmap": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomsteele/warmap"
+  },
+  "keywords": [
+    "Kismet",
+    "Wireless",
+    "Wardriving"
+  ],
+  "author": "Tom Steele",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomsteele/warmap/issues"
+  },
+  "homepage": "https://github.com/tomsteele/warmap",
+  "dependencies": {
+    "xml2js": "~0.2.8",
+    "lodash": "~2.2.1",
+    "optimist": "~0.6.0"
+  }
+}

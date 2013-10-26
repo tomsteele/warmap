@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>WarMap</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://hpneo.github.io/gmaps/gmaps.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      #map {
+        display: block;
+        width: 100%;
+        height: 700;
+      }
+    </style>
+    <script>
+      $(document).ready(function() {
+        var isEditable = false;
+        $('#editButton').click(function() {
+          if (isEditable === false) {
+            isEditable = true;
+          } else {
+            isEditable = false;
+          }
+          drawMap();
+        });
+        function drawMap() {
+          var map = new GMaps({
+            el: '#map',
+            lat: {{lat}},
+            lng: {{lng}},
+            zoom: 16
+          });
+          paths = {{paths}};
+          map.drawPolygon({
+            paths: paths,
+            fillColor: '#3366FF',
+            fillOpacity: 0.5,
+            strokeColor: '#3366ff',
+            strokeOpacity: 1.0,
+            strokeWeight: 1,
+            strokePosition: 'OUTSIDE',
+            editable: isEditable
+          });
+        }
+        drawMap();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container" style="padding-top: 80px">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Displaying {{pathLength}} points.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-11">
+          <div id="map"></div>
+        </div>
+        <div class="col-xs-1">
+          <button type="button" id="editButton" class="btn btn-primary" data-toggle="button">Editable</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
