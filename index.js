@@ -30,7 +30,7 @@ function writePathsToFile(points) {
 }
 
 function extractPoints(point) {
-  if (ssids.indexOf(point.$.bssid) !== -1) {
+  if (ssids.indexOf(point.$.bssid.toLowerCase()) !== -1) {
     return [parseFloat(point.$.lat), parseFloat(point.$.lon)];
   }
 }
@@ -65,4 +65,5 @@ if (fs.existsSync(ssids)) {
 } else {
   ssids = ssids.split(',');
 }
+ssids = _.map(ssids, function(ssid) { return ssid.toLowerCase(); });
 fs.readFile(gpsFile, { encoding: 'utf8' }, parseXml);
