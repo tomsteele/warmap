@@ -1,9 +1,12 @@
 warmap
 ======
 
+## Not Supported
+You should use the Go version here: [warmap-go](https://github.com/rmikehodges/warmap-go)
+
 Creates wonderful maps from Kismet gpsxml files.
 
-###Installation###
+### Installation
 Install from npm:
 
         $ npm install -g warmap
@@ -14,7 +17,7 @@ Alternatively, you can clone the repository, install the required modules using 
         $ npm install
         $ ./index.js
         
-###Usage###
+### Usage
 
         $ warmap <file.gpsxml> <bssids>
 
